@@ -19,7 +19,7 @@ class _Page1State extends State<Page1> {
   @override
   void initState() {
     getData();
-    
+
     super.initState();
   }
 
@@ -32,6 +32,7 @@ class _Page1State extends State<Page1> {
     }
   }
 
+  List pages = [const Page2(), const Page3()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +40,7 @@ class _Page1State extends State<Page1> {
         title: const Text('App Name'),
       ),
       body: Container(
-        padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+        padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
         child: Visibility(
           visible: isLoaded,
           child: GridView.builder(
@@ -55,7 +56,9 @@ class _Page1State extends State<Page1> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const Page2(),
+                        builder: (context) {
+                          return pages[index];
+                        },
                       ),
                     );
                   },

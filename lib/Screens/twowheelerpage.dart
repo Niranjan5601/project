@@ -51,7 +51,6 @@ class _Page2State extends State<Page2> {
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {
-                    
                     Navigator.push(
                         context,
                         MaterialPageRoute(
